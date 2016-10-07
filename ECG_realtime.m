@@ -5,7 +5,6 @@ fs = 360; %set the sample rate
 q = 3;
 %buff_len = 1500;
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %filter design
 %[b_60,a_60] remove 60Hz power-line noise
