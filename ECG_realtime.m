@@ -91,7 +91,7 @@ end
 peak_shift = [peak(5:end) zeros(1,4)];
 
 
-% figure;
+figure;
 hold on
 plot(dis_flat(6000:12000));
 plot(300000*peak(6000:12000));
