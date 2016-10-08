@@ -74,7 +74,7 @@ a = fliplr(a);
 % tracking points and sampling rate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-p_tracking = 133;
+p_tracking = round(100/fs*360);
 threhold = -2000;
 tic
 for i= 1:signal_len
@@ -97,18 +97,18 @@ for i= 1:signal_len
             % ***************
             dis_fil(i) = (sum(b.*y(i-length(b)+1:i))-sum(a(2:end).*dis_fil(i-length(a)+1:i-1)))./a(1);
             dis_flat(i) = dis_fil(i).^2;
-            dis_flat = mean()
+            if i > ma_len
+                dis_flat(i) = mean(dis_flat(i-ma_len+1:i))
+            else
+                dis_flat(i) = mean(dis_flat(1:i))
+            end
             % if i > the number we trace back and the slope is enough larger
             if i > p_tracking && dis_flat(i) - dis_flat(i-1) < -threhold
                 [~,p] = max(dis_flat(i-p_tracking:i));
                 p = p + i - (p_tracking+1);
-                peak(p) = 1;
+                peak(p-4) = 1;
             end
         end
-
-        
-
-
         if i>1
             cir1 = time(peak ==1);
             cir2 = disbuff(peak ==1);
