@@ -74,7 +74,7 @@ a = fliplr(a);
 % tracking points and sampling rate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-p_tracking = round(100/fs*360);
+p_tracking = round(100*fs/360);
 threhold = -2000;
 tic
 for i= 1:signal_len
