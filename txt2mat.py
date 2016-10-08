@@ -10,6 +10,7 @@ mid_list = glob.glob(os.path.join(base_path,'mid/'+'*.txt'))
 hard_list = glob.glob(os.path.join(base_path,'hard/'+'*.txt'))
 flist = easy_list + mid_list + hard_list
 
+# print (flist)
 for path in flist:
 	f = open(path,'r')
 	peak = []
