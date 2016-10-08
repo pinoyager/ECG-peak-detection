@@ -26,7 +26,8 @@ figure
 h_plot=plot(nan,nan);
 hold off 
 
-q = 6;
+q = 12;
+
 notch_freq = 60/(fs/2);
 [b_60,a_60] = iirnotch(notch_freq,notch_freq/q);
 [b_120,a_120] = iirnotch(notch_freq*2,notch_freq/q);
