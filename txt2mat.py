@@ -23,8 +23,9 @@ for path in flist:
 		second = float(time[1])
 		# print(second)
 		peak.append(round((minute*60+second)*360))
-	
+	print(path,':',len(peak))
 	peak_vec = np.asarray(peak)
+
 	s_path=path.split('.txt')[0]+'peak.mat'
 	sio.savemat(s_path,{'ref_peak':peak_vec})
 
