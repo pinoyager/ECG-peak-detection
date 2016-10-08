@@ -2,8 +2,8 @@ close all;
 clear all;
 load('./MIT_database/hard/108m.mat');
 fs = 360; %set the sample rate
-q = 3;
-%buff_len = 1500;
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %filter design
@@ -13,6 +13,7 @@ q = 3;
 % ma is moving average filter to remove two peaks
 % a, b are filter coefficient
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+q = 3;
 notch_freq = 60/(fs/2);
 [b_60,a_60] = iirnotch(notch_freq,notch_freq/q);
 [b_120,a_120] = iirnotch(notch_freq*2,notch_freq/q);
