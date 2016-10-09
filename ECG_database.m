@@ -86,18 +86,18 @@ for i = 1:length(data_list),
 	dis_flat = 10*dis_flat;
 	for i=1:length(dis_flat)-1
 		
-		if dis_flat(i+1) - dis_flat(i) < -2000 && i>200
-			[~,i_max] = max(dis_flat(i+1-200:i+1));
-			i_max = i_max + i - 200;
+		if dis_flat(i+1) - dis_flat(i) < -2000 && i>150
+			[~,i_max] = max(dis_flat(i+1-150:i+1));
+			i_max = i_max + i - 150;
 			peak(i_max) = 1;
 		end
 	end
 
-	peak_shift = [peak(7:end) zeros(1,6)];
+	peak_shift = peak(7:end);
 
 	peak_index = find(peak_shift==1);
 	j = 2;
-	tol = 10;
+	tol = 20;
 	i = 1;
 	TP = 0;
 	FP = 0;
