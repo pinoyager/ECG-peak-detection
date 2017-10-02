@@ -4,7 +4,7 @@ import os
 import numpy as np
 import csv
 
-base_path = './MIT_database'
+base_path = '/Users/yunhsuan/Dropbox/777DSP lab/Lab4/MIT database'
 easy_list = glob.glob(os.path.join(base_path,'easy/'+'*.txt'))
 mid_list = glob.glob(os.path.join(base_path,'mid/'+'*.txt'))
 hard_list = glob.glob(os.path.join(base_path,'hard/'+'*.txt'))
